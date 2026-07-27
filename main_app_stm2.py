@@ -5,6 +5,7 @@ import predict_TM
 import llm_app
 
 # ---------------- PAGE CONFIG ----------------
+groq_api_key = st.secrets('groq_api_key')
 
 st.set_page_config(
     page_title="Gesture Num : Decoding Sign Into Digits",
@@ -233,7 +234,7 @@ with right:
 
     if topic:
 
-        description=llm_app.llm_app(topic)
+        description=llm_app.llm_app(topic,groq_api_key)
 
         st.success("Prediction Completed")
 
