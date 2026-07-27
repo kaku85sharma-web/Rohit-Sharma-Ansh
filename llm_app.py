@@ -1,25 +1,35 @@
 def llm_app(topic):
- import os
- from dotenv import load_dotenv
- from langchain_core.prompts import PromptTemplate
- from langchain_groq import ChatGroq
- # 1. Initialize your LLM
- load_dotenv()
-groq_api_key = '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'
+    import os
+    from dotenv import load_dotenv
+    from langchain_core.prompts import PromptTemplate
+    from langchain_groq import ChatGroq
 
- llm = ChatGroq(model='openai/gpt-oss-120b', api_key=groq_api, temperature=0.1)
+    # Load environment variables
+    load_dotenv()
 
- prompt=PromptTemplate(
-    input_variables=['topic'],
-    
-    template='You are a sign language expert.\
-    provide five important lines coverng about {topic}.'
- )
+    # Groq API Key
+    groq_api_key = "gsk_your_new_api_key"
 
- chain=prompt | llm
+    # Initialize LLM
+    llm = ChatGroq(
+        model="openai/gpt-oss-120b",
+        api_key=groq_api_key,
+        temperature=0.1
+    )
 
- #topic=input('Enter a topic')
- 
- output=chain.invoke(topic)
- #print('Generated Blog Title ', output.content)
- return output.content
+    # Prompt Template
+    prompt = PromptTemplate(
+        input_variables=["topic"],
+        template="""
+You are a sign language expert.
+Provide five important lines covering about {topic}.
+"""
+    )
+
+    # Create chain
+    chain = prompt | llm
+
+    # Invoke the model
+    output = chain.invoke({"topic": topic})
+
+    return output.content
