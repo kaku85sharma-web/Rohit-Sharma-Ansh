@@ -1,4 +1,4 @@
-def llm_app(topic):
+def llm_app(topic,groq_api_key):
    
     from langchain_core.prompts import PromptTemplate
     from langchain_groq import ChatGroq
@@ -7,7 +7,7 @@ def llm_app(topic):
 
 
     # Groq API Key
-    groq_api_key = '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'
+    groq_api_key = groq_api_key
 
 
     # Initialize LLM
