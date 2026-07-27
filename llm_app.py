@@ -1,11 +1,10 @@
 def llm_app(topic):
-    import os
-    from dotenv import load_dotenv
+   
     from langchain_core.prompts import PromptTemplate
     from langchain_groq import ChatGroq
 
-    # Load environment variables
-    load_dotenv()
+    
+
 
     # Groq API Key
     groq_api_key = "gsk_your_new_api_key"
