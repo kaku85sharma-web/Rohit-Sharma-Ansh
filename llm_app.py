@@ -7,7 +7,7 @@ def llm_app(topic):
 
 
     # Groq API Key
-    "groq_api_key" = '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'
+    groq_api_key = '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'
 
 
     # Initialize LLM
