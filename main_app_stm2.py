@@ -5,7 +5,7 @@ import predict_TM
 import llm_app
 
 # ---------------- PAGE CONFIG ----------------
-groq_api_key = st.secrets('groq_api_key')
+groq_api_key = st.secrets("groq_api_key")
 
 st.set_page_config(
     page_title="Gesture Num : Decoding Sign Into Digits",
